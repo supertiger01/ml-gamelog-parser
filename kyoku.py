@@ -123,7 +123,7 @@ class Kyoku:
         return True
 
     def do_richi(self, args):
-        self.players[args[0]].richi = True
+        self.players[args[0]].do_richi()
         return True
 
     def do_point(self, args):
