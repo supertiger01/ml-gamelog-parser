@@ -44,7 +44,6 @@ def extract_one_kyoku(json_data, kyoku_num):
 
 
 if __name__ == "__main__":
-    # file = "/Users/notoya/Documents/Univ./2024/it_murao/ml-gamelog-parser/L001_S002_0008_01A.json"
     args = parse_args()
     json_data = load_paifu(args.file)
     kyoku_data = extract_one_kyoku(json_data, args.kyoku_num)
