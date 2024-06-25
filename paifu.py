@@ -6,8 +6,8 @@ from kyoku import Kyoku
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-k", "--kyoku_num", type=int, help="kyoku number")
-    parser.add_argument("file", help="paifu file")
+    parser.add_argument("-k", "--kyoku_num", type=int, help="kyoku number") #ここで曲数を指定
+    parser.add_argument("file", help="paifu file") #ここでファイル名を指定
     return parser.parse_args()
 
 
@@ -44,11 +44,12 @@ def extract_one_kyoku(json_data, kyoku_num):
 
 
 if __name__ == "__main__":
+    # file = "/Users/notoya/Documents/Univ./2024/it_murao/ml-gamelog-parser/L001_S002_0008_01A.json"
     args = parse_args()
     json_data = load_paifu(args.file)
     kyoku_data = extract_one_kyoku(json_data, args.kyoku_num)
 
-    with open("hoge.json", "w") as f:
+    with open("../2023-2024_paifu/L001_S002_0008_01A.json", "w") as f:
         json.dump(kyoku_data, f, indent=2)
 
     kyoku = Kyoku(kyoku_data)
