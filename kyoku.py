@@ -1,3 +1,4 @@
+# 麻雀
 from player import Player
 
 # fmt: off
